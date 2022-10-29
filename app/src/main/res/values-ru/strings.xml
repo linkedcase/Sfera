@@ -2,4 +2,21 @@
 <resources>
     <string name="app_name">Приложение</string>
     <string name="greeting">Проект Сфера!</string>
+    <string name="content_description_app_bar_icon">Иконка навигации</string>
+    <string name="content_description_app_bar_share">Поделиться</string>
+    <string name="content_description_app_bar_download">Загрузить</string>
+    <string name="download_button_title">Загрузить</string>
+    <string name="share_button_title">Поделиться</string>
+    <string name="user_name">Имя пользователя</string>
+    <string name="user_language">Русский, Анклийский, Немецкий</string>
+    <string name="user_location">Нью Йорк, США</string>
+    <string name="choose">Выбрать</string>
+    <string name="people">Люди</string>
+    <string name="questionnaires">Анкета</string>
+    <string name="about_me">Обо мне</string>
+    <string name="context_user">Жизнь будет гораздо проще и приятнее для каждого человека, если мы будем</string>
+    <string name="dream_and_get">Мечтать и получать</string>
+    <string name="wishes">Желания</string>
+    <string name="moments">Моменты</string>
+    <string name="chronicles">Chronicles</string>
 </resources>

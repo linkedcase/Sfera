@@ -1,19 +1,256 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:isScrollContainer="true"
+    android:orientation="vertical"
+    android:scrollbars="vertical"
+    android:verticalScrollbarPosition="defaultPosition"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/greeting"
-        android:textSize="@dimen/common_spacing"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/appBarIcon"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/menu_top_app_bar"
+            app:navigationIcon="@drawable/ic_baseline_navigation_icon_24dp"
+            app:navigationIconTint="@color/white"
+            app:title="@string/app_bar_title" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/userAvatar"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="@dimen/common_spacing"
+        android:elevation="3dp"
+        app:cardCornerRadius="80dp"
+        app:cardElevation="5dp"
+        app:cardMaxElevation="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/topAppBar" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginTop="@dimen/common_spacing"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:singleLine="true"
+        android:text="@string/user_name"
+        android:textAlignment="center"
+        android:textSize="@dimen/large_size_font"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userAvatar" />
+
+    <ImageView
+        android:id="@+id/languageImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="23dp"
+        android:src="@drawable/ic_baseline_language_20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userName" />
+
+    <ImageView
+        android:id="@+id/locationImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="23dp"
+        android:src="@drawable/ic_baseline_location_on_14dp"
+        app:layout_constraintBottom_toBottomOf="@id/userLocation"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/userLanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="24dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="@string/user_language"
+        android:textAlignment="viewStart"
+        android:textSize="@dimen/common_size_font"
+        app:layout_constraintStart_toEndOf="@id/languageImage"
+        app:layout_constraintTop_toBottomOf="@id/userName" />
+
+    <TextView
+        android:id="@+id/chooseLanguage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:text="@string/choose"
+        android:textColor="@color/medium_magenta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/userName" />
+
+    <TextView
+        android:id="@+id/chooseLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:text="@string/choose"
+        android:textColor="@color/medium_magenta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chooseLanguage" />
+
+    <TextView
+        android:id="@+id/userLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="@string/user_location"
+        android:textAlignment="viewStart"
+        android:textSize="@dimen/common_size_font"
+        app:layout_constraintStart_toStartOf="@id/userLanguage"
+        app:layout_constraintTop_toBottomOf="@id/userLanguage" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recViewImageProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="14dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chooseLocation"
+        tools:itemCount="4"
+        tools:listitem="@layout/count_image_profile" />
+
+    <Button
+        android:id="@+id/peopleButton"
+        style="@style/outlinedButtonsStyle"
+        android:layout_width="160dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:background="@color/gray_007"
+        android:backgroundTint="@color/gray_007"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:text="@string/people"
+        app:cornerRadius="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recViewImageProfile"
+        app:strokeColor="@color/medium_magenta" />
+
+    <Button
+        android:id="@+id/questionnairesButton"
+        style="@style/outlinedButtonsStyle"
+        android:layout_width="160dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginTop="24dp"
+        android:background="@color/gray_007"
+        android:backgroundTint="@color/gray_007"
+        android:gravity="center_vertical|center_horizontal"
+        android:minWidth="1dp"
+        android:paddingStart="2dp"
+        android:paddingEnd="2dp"
+        android:shadowColor="@color/medium_magenta"
+        android:text="@string/questionnaires"
+        app:cornerRadius="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recViewImageProfile"
+        app:strokeColor="@color/medium_magenta" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textAboutUser"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:hint="@string/about_me"
+        android:enabled="true"
+        android:orientation="horizontal"
+        app:boxBackgroundColor="@color/black_121212"
+        app:counterEnabled="true"
+        app:counterMaxLength="300"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/peopleButton">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextAboutMe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceSubtitle2"
+            android:textAlignment="textStart"
+            android:textSize="@dimen/big_size_font"
+            android:outlineSpotShadowColor="@color/white_grey"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:text="@string/context_user"
+            android:textColor="@color/white_def" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/dreamAndGet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textAboutUser"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:text="@string/dream_and_get"
+        android:textColor="@color/white_def"
+        android:textSize="@dimen/big_size_font"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/switchButton"
+        app:layout_constraintTop_toBottomOf="@id/textAboutUser"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:layout_marginTop="21dp"
+
+
+        />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:id="@+id/wisheaButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dreamAndGet"
+        android:layout_marginEnd="@dimen/common_spacing"
+        android:layout_marginStart="@dimen/common_spacing"
+        android:layout_marginTop="20dp"
+        android:text="@string/wishes"
+        android:textColor="@color/white_def"
+        android:textSize="@dimen/common_size_font"
+        android:background="@color/black_121212"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

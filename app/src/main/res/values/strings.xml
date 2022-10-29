@@ -1,4 +1,25 @@
 <resources>
     <string name="app_name">FirstProject</string>
     <string name="greeting">Sfera project!</string>
+    <string name="app_bar_title" translatable="false">ID 123 456 789</string>
+    <string name="content_description_app_bar_icon">Navigation icon</string>
+    <string name="content_description_app_bar_share">Share</string>
+    <string name="content_description_app_bar_download">Download</string>
+    <string name="download_button_title">Download</string>
+    <string name="share_button_title">Share</string>
+    <string name="user_name">User name</string>
+    <string name="user_language">Russian, English, German</string>
+    <string name="user_location">New York city, USA</string>
+    <string name="choose">Choose</string>
+    <string name="people">People</string>
+    <string name="questionnaires">Questionnaires</string>
+    <string name="about_me">About me</string>
+    <string name="context_user">Life will be much easier and more enjoyable for everyone if we</string>
+    <string name="dream_and_get">Dream and get</string>
+    <string name="wishes">Wishes</string>
+    <string name="moments">Moments</string>
+    <string name="chronicles">Chronicles</string>
+
+
+
 </resources>

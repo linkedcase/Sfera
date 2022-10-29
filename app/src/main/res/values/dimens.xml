@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="common_spacing">32dp</dimen>
+    <dimen name="common_spacing">16dp</dimen>
+    <dimen name="small_size_font">12sp</dimen>
+    <dimen name="common_size_font">14sp</dimen>
+    <dimen name="big_size_font">16sp</dimen>
+    <dimen name="large_size_font">18sp</dimen>
 </resources>

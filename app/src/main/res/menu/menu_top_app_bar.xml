@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/downloadButton"
+        android:icon="@drawable/ic_baseline_download_24dp"
+        android:title="@string/download_button_title"
+        android:contentDescription="@string/content_description_app_bar_download"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/shareButton"
+        android:contentDescription="@string/content_description_app_bar_share"
+        android:icon="@drawable/ic_baseline_share_24dp"
+        android:title="@string/share_button_title"
+        app:showAsAction="ifRoom" />
+
+</menu>
