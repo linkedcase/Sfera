@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">AppSfera</string>
+    <string name="share_button">Share</string>
+    <string name="id_user">ID 123 456 789</string>
+    <string name="user_rating">5.0</string>
+    <string name="user_name">User name</string>
+    <string name="user_language">Russian, English, German</string>
+    <string name="user_location">Izhevsk, Russia</string>
+    <string name="choose">Choose</string>
+    <string name="questionnaires">Questionnaires</string>
+    <string name="peoples">Peoples</string>
+    <string name="about_me">About me</string>
+    <string name="text_about_me">Life will be much easier and more enjoyable for everyone if we</string>
+    <string name="dream_and_get">Dream and get</string>
+    <string name="moments">Moments</string>
+    <string name="chronicles">Chronicles</string>
+
+</resources>

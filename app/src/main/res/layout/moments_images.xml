@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageFirst"
+        android:layout_width="79dp"
+        android:layout_height="105dp"
+        app:shapeAppearanceOverlay="@style/circularCorner"
+        app:srcCompat="@drawable/moments_image" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageSecond"
+        android:layout_width="79dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="2dp"
+        android:src="@drawable/moments_image_2"
+        app:shapeAppearanceOverlay="@style/circularCorner" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageThird"
+        android:layout_width="79dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="2dp"
+        android:src="@drawable/moments_image_3"
+        app:shapeAppearanceOverlay="@style/circularCorner" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageFourth"
+        android:layout_width="79dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="2dp"
+        android:src="@drawable/moments_image_4"
+        app:shapeAppearanceOverlay="@style/circularCorner" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageFifth"
+        android:layout_width="79dp"
+        android:layout_height="105dp"
+        android:layout_marginStart="2dp"
+        android:src="@drawable/moments_image_5"
+        app:shapeAppearanceOverlay="@style/circularCorner" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageSixth"
+        android:layout_width="79dp"
+        android:layout_height="105dp"
+        android:src="@drawable/moments_image_5"
+        app:shapeAppearanceOverlay="@style/circularCorner" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="imageFirst, imageSecond, imageThird, imageFourth, imageFifth, imageSixth"
+        app:flow_verticalGap="2dp"
+        app:flow_horizontalGap="4dp"
+        app:flow_horizontalStyle="packed"
+        app:flow_wrapMode="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

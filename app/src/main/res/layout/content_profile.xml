@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/black">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/topAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/top_app_bar"
+            app:navigationIcon="@drawable/ic_baseline_menu_24dp"
+            app:title="@string/id_user"
+            app:titleTextColor="@color/white" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/profileActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/avatarUser"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="@dimen/margin_common_spacing"
+                android:src="@drawable/avatar_user"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/circular" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/circularFormForRating"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:textAlignment="center"
+                app:contentPadding="1dp"
+                app:layout_constraintBottom_toBottomOf="@id/avatarUser"
+                app:layout_constraintStart_toStartOf="@id/avatarUser"
+                app:shapeAppearanceOverlay="@style/circular"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp" />
+
+            <TextView
+                android:id="@+id/userRating"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:text="@string/user_rating"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="40dp"
+                app:layout_constraintBottom_toBottomOf="@id/circularFormForRating"
+                app:layout_constraintStart_toStartOf="@id/circularFormForRating" />
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_common_spacing"
+                android:padding="2dp"
+                android:text="@string/user_name"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_large"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/avatarUser" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/headerBarrier"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="userName" />
+
+            <Space
+                android:id="@+id/space"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                app:layout_constraintTop_toBottomOf="@id/headerBarrier" />
+
+            <ImageView
+                android:id="@+id/imageLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_common_spacing"
+                android:src="@drawable/ic_baseline_language_24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/space" />
+
+            <TextView
+                android:id="@+id/userLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_common_spacing"
+                android:layout_marginEnd="@dimen/margin_common_spacing"
+                android:ellipsize="end"
+                android:text="@string/user_language"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_big"
+                app:layout_constraintEnd_toStartOf="@id/chooseLanguage"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/imageLanguage"
+                app:layout_constraintTop_toBottomOf="@id/space" />
+
+            <TextView
+                android:id="@+id/chooseLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_common_spacing"
+                android:padding="0dp"
+                android:text="@string/choose"
+                android:textAlignment="center"
+                android:textColor="@color/purple_gray"
+                android:textSize="@dimen/text_size_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/space" />
+
+            <ImageView
+                android:id="@+id/imageLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_common_spacing"
+                android:layout_marginTop="@dimen/margin_common_spacing"
+                android:src="@drawable/ic_baseline_location_on_24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userLanguage" />
+
+            <TextView
+                android:id="@+id/userLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_common_spacing"
+                android:layout_marginTop="@dimen/margin_common_spacing"
+                android:layout_marginEnd="@dimen/margin_common_spacing"
+                android:ellipsize="marquee"
+                android:text="@string/user_location"
+                android:textAlignment="viewStart"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_big"
+                app:layout_constraintEnd_toStartOf="@id/chooseLocation"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toEndOf="@id/imageLocation"
+                app:layout_constraintTop_toBottomOf="@id/userLanguage" />
+
+            <TextView
+                android:id="@+id/chooseLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_common_spacing"
+                android:layout_marginEnd="@dimen/margin_common_spacing"
+                android:padding="0dp"
+                android:text="@string/choose"
+                android:textAlignment="center"
+                android:textColor="@color/purple_gray"
+                android:textSize="@dimen/text_size_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/chooseLanguage" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvImageUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_common_spacing"
+                android:layout_marginTop="@dimen/margin_common_spacing"
+                android:layout_marginEnd="@dimen/margin_common_spacing"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/userLocation"
+                tools:itemCount="1"
+                tools:listitem="@layout/user_images" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/questionnairesButton"
+                style="@style/myStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_common_spacing"
+                android:layout_marginTop="@dimen/margin_common_spacing"
+                android:text="@string/questionnaires"
+                android:textColor="@color/purple_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvImageUser"
+
+                app:layout_constraintWidth_percent="0.45" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                style="@style/myStyle"
+                android:id="@+id/peopleButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_common_spacing"
+                android:layout_marginEnd="@dimen/margin_common_spacing"
+                android:text="@string/peoples"
+                android:textAllCaps="true"
+                android:textColor="@color/purple_gray"
+                android:textSize="@dimen/text_size_normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvImageUser"
+                app:layout_constraintWidth_percent="0.45" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/aboutMe"
+                app:layout_constraintTop_toBottomOf="@id/questionnairesButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="@dimen/margin_common_spacing"
+                android:layout_marginStart="@dimen/margin_common_spacing"
+                android:layout_marginEnd="@dimen/margin_common_spacing"
+                android:hint="@string/about_me"
+                android:enabled="true"
+                android:orientation="horizontal"
+                app:counterEnabled="true"
+                app:counterMaxLength="300"
+                app:boxBackgroundColor="@color/black"
+                android:textColorHint="@color/purple_gray"
+                app:counterTextColor="@color/purple_gray">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textAboutMe"
+                    android:textAppearance="?attr/textAppearanceSubtitle2"
+                    android:textAlignment="textStart"
+                    android:textSize="@dimen/text_size_big"
+                    android:outlineAmbientShadowColor="@color/gray_button"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/text_about_me"
+                    android:textColor="@color/white_gray"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/dreamAndGet"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/aboutMe"
+                android:layout_marginTop="@dimen/margin_common_spacing"
+                android:layout_marginStart="@dimen/margin_common_spacing"
+                android:text="@string/dream_and_get"
+                android:textColor="@color/white_gray"
+                android:textSize="@dimen/text_size_big"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/switchButton"
+                app:layout_constraintTop_toBottomOf="@id/aboutMe"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="@dimen/margin_common_spacing"
+                app:thumbTint="@color/purple_gray"
+                app:trackTint="@color/gray_button"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/moments"
+                android:text="@string/moments"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dreamAndGet"
+                android:textColor="@color/purple_gray"
+                android:textSize="@dimen/text_size_normal"
+                android:layout_marginStart="@dimen/margin_common_spacing"
+                android:layout_marginTop="@dimen/margin_common_spacing"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rvImagesMoment"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/moments"
+                android:layout_marginTop="@dimen/margin_common_spacing"
+                android:layout_marginStart="@dimen/margin_common_spacing"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/moments_images"
+                android:scrollbarStyle="insideInset"
+                android:isScrollContainer="true"
+                android:scrollbarAlwaysDrawHorizontalTrack="true"
+                android:scrollbarFadeDuration="@android:integer/config_longAnimTime"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/chronicles"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvImagesMoment"
+                android:layout_marginStart="@dimen/margin_common_spacing"
+                android:layout_marginTop="@dimen/margin_common_spacing"
+                android:text="@string/chronicles"
+                android:textColor="@color/purple_gray"
+                android:textSize="@dimen/text_size_normal" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
